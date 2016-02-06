@@ -2,8 +2,7 @@
 
 #include <iostream>
 #include <string>
-
-using namespace std;
+#include <algorithm>
 
 void reverse(char* str) {
 	char* start = str; // Signifies the start of the string
@@ -21,7 +20,7 @@ void reverse(char* str) {
 
 int main() {
 	char str[] = "Interior crocodile alligator";
-	cout << str << endl;
+	std::cout << str << std::endl;
 	reverse(str);
-	cout << str << endl;
+	std::cout << str << std::endl;
 }
