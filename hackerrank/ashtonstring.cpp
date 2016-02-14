@@ -23,6 +23,7 @@ void kthCharacterSet(const std::string& str, const int& k) {
 			if (inputString.substr(i,j).empty())
 				continue;
 			substringSet.insert(inputString.substr(i,j));
+			std::cout << "(" << i << "," << j << "): " << inputString.substr(i,j) << std::endl;
 		}
 	}
 
@@ -47,7 +48,7 @@ int main() {
     for (int i = 0; i < cases; i++) {
         std::cin >> testString;
         std::cin >> k;
-        kthCharacter(testString, k);
+        kthCharacterSet(testString, k);
     }
 }
 
