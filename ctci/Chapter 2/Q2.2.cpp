@@ -6,7 +6,11 @@ linked list */
 #include "linkedlist.h"
 #include "linkedlist.cpp"
 
-Node* ktoLast(Node* head, int k) {
+Node* kToLast(Node* head, int k) {
+	// Check if the list is empty
+	if (head == NULL)
+		return NULL;
+
 	// Set the head to be the current node
 	Node* current = head;
 
@@ -33,6 +37,37 @@ Node* ktoLast(Node* head, int k) {
 	return current;
 }
 
+Node* kToLastRunner(Node* head, int k) {
+	// First we'll check if the list is empty
+	if (head == NULL)
+		return NULL;
+
+	// And let's check if k is an appropriate value
+	if (k <= 0)
+		return NULL;
+
+	// Next we'll create two nodes to traverse the list
+	Node* n1 = head;
+	Node* n2 = head;
+
+	// Let's move n2 k nodes into the list
+	for (int i = 0; i < k - 1; i++) {
+		if (n2 == NULL)
+			return NULL;
+		n2 = n2->next;
+	}
+
+	if (n2 == NULL)
+		return NULL;
+
+	// Now we can move n1 and n2 at the same pace
+	while (n2->next != NULL) {
+		n1 = n1->next;
+		n2 = n2->next;
+	}
+	return n1;
+}
+
 int main() {
 	// Creating a linked list
 	LinkedList* myList = new LinkedList();
@@ -50,7 +85,10 @@ int main() {
 	myList->display();
 
 	std::cout << "The 4th to last element is: ";
-	std::cout << ktoLast(myList->head, 4)->data << std::endl;
+	std::cout << kToLast(myList->head, 4)->data << std::endl;
+	std::cout << "The 4th to last element is: ";
+	std::cout << kToLastRunner(myList->head, 4)->data << std::endl;
+
 	delete myList;
 
 	return 0; 
