@@ -21,7 +21,7 @@ bool permutationHash(const std::string& s, const std::string& t) {
 		return false;
 	}
 
-	// set length of string
+	// Set length of string
 	int length = stringA.length();
 
 	// Iterate through strings to map elements

@@ -7,7 +7,7 @@ additional characters, and that you are given the 'true' length of the string. *
 
 using namespace std;
 
-string ReplaceSpaces(string str) {
+string replaceSpaces(string str) {
 
 	int newLength, spaceCount = 0;
 
@@ -42,5 +42,5 @@ string ReplaceSpaces(string str) {
 int main() {
 	string str = "The number of fucks I give: ";
 	cout << str << endl;
-	cout << ReplaceSpaces(str) << endl;
+	cout << replaceSpaces(str) << endl;
 }
