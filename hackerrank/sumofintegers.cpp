@@ -7,7 +7,7 @@ long sumOfIntegers(std::vector<int> arr) {
 	for (std::vector<int>::iterator it = arr.begin(); it != arr.end(); ++it) {
 		sum += *it;
 	}
-	
+
 	return sum;
 }
 
@@ -21,6 +21,6 @@ int main() {
 		std::cin >> vectorVal;
 		myVector.push_back(vectorVal);
 	}
-
+	
 	std::cout << sumOfIntegers(myVector) << std::endl;
 }
